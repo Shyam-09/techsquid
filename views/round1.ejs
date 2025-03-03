@@ -597,7 +597,7 @@ function checkAnswers() {
         });
 
         if (allCorrect) {
-            const year = '◌̯ year ◌̯'; // Ensure this variable is available from EJS
+            const year = '<%= year %>'; // Ensure this variable is available from EJS
             window.location.href = `/key?year=${year}`;
         }
     }, 300); // 300ms delay for blinking effect
