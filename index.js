@@ -29,7 +29,7 @@ app.listen(PORT,()=>{
 
 
 
-app.get("/root",(req,res)=>{
+app.get("/",(req,res)=>{
     res.render("intro.ejs");
 })
 
