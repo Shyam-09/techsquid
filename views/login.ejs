@@ -1,0 +1,32 @@
+<% layout("boilerplate.ejs") %>
+<body class="login-page">
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    </style>
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="login-container">
+        <h2>Team Login</h2>
+        <form action="/round1" method="POST">
+            <label for="team">Team Name:</label>
+            <input type="text" id="team" name="team" required>
+
+            <label for="year">Year:</label>
+            <select id="year" name="year" required>
+                <option value="" disabled selected>Select Year</option>
+                <option value="1st">1st Year</option>
+                <option value="2nd">2nd Year</option>
+                <option value="3rd">3rd Year</option>
+                <option value="4th">4th Year</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="/js/round2.js"></script>
+</body>

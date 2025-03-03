@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.video-container {
+    position: fixed !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* .image-container {
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+} */
+
+.transition-page {
+    background: url('/assests/1000058685.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+    height: 100vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: white !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 8px black !important;
+}
+
+/* .transition-page1 {
+    background: url('/assests/1000058769.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    height: 100vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: white !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 8px black !important;
+} */
+
+/* .keyimage{
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+} */
+
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    height: auto !important;
+}
+
+/* Cards Container */
+.question-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual Card */
+.card {
+    background: #1E1E1E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: left;
+    margin-bottom: 2rem;
+    z-index: 5;
+}
+
+/* Card Title */
+.card h1 {
+    font-size: 25px;
+    color: #facc15;
+}
+
+/* Card Description */
+.card p {
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+
+
+.name_section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name_section p {
+    font-weight: bolder;
+    color: rgb(253, 3, 3);
+}
+.inp{
+    margin-left: 2rem;
+}
+
+.logo{
+    height: 2rem;
+    width: 2rem;
+    color: #d1d5db;
+    background-color: #1E1E1E;
+    opacity: 2rem;
+}
+
+
+li{
+    list-style-type: circle;
+    color: #d1d5db;
+}
+
+.typewriter{
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    top: 3rem;
+}
+
+.typewriter p{
+    font-family:  monospace;
+    font-size: 1.5rem;
+    margin-inline: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid;
+
+    animation: typing 4s steps(22) forwards,
+    blink 1s step-end infinite;
+}
+
+
+.error1 {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+.error-message1 {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+@keyframes typing{
+    from{
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    height: 300vh; /* Add enough height to enable scrolling */
+    position: relative;
+}
+canvas {
+    position: fixed; /* Fixed position for scrolling effect */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keep canvas behind the content */
+}
+.content {
+    padding: 20px;
+    font-size: 24px;
+}
+
+.qp{
+    font-weight: 800 !important;
+    font-size: x-large;
+}
+
+/* Login Page Styles */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+    width: 300px;
+}
+
+.login-container h2 {
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 0, 127, 0.8);
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: rgba(193, 82, 137, 0.8);
+}
+
+
+@keyframes blink{
+    50%{
+        border-color: transparent;
+    }
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .question-cards {
+        grid-template-columns: 1fr;
+    }
+}

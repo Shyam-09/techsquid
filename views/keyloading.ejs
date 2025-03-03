@@ -1,0 +1,28 @@
+<% layout("boilerplate.ejs") %>
+<body class="transition-page">
+    <div class="typewriter">
+        <div>
+            <p>Congrats! you get the access key for coding test</p>
+        </div>
+    </div>
+    <script>
+        setTimeout(function () {
+            const year = "<%= year %>".toLowerCase(); // Convert to lowercase for consistency
+        let round2Page = "/round2"; // Default route
+
+        // Assign different routes based on year
+        if (year.includes("1")) {
+            round2Page = "/round2_1";
+        } else if (year.includes("2")) {
+            round2Page = "/round2_2";
+        } else if (year.includes("3")) {
+            round2Page = "/round2_3";
+        } else if (year.includes("4")) {
+            round2Page = "/round2_4";
+        }
+
+        // Redirect to the correct round2 page
+        window.location.href = round2Page;
+        }, 5000);
+    </script>
+</body>

@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section-2 Coding Test</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+            position: relative;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .question-box {
+            background: rgba(35, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
+            margin-bottom: 30px;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .example_section{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .exm{
+            margin-left: 2rem;
+        }
+        .inp{
+            margin-left: 4rem;
+        }
+        h1 {
+            text-align: center;
+        }
+        .title{
+            z-index: 2;
+        }
+        .logo {
+            width: 300px; 
+            margin-bottom: 20px;
+            text-align: center;
+            height: 100px;
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.8), 0 0 40px rgba(255, 0, 127, 0.5); 
+            border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+        }
+        .image_section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="container">
+        <div class="image_section">
+            <img src="../assests/1000059082.jpg" alt="Round 1 Logo" class="logo">
+        </div>
+        <div class="question-box">
+            <div class="question_section">
+                <h2>Plus One</h2>
+                <p class="qp">You are given a large integer represented as an integer array digits,Increment the large integer by one and return the resulting array of digits.</p>
+
+            </div>
+            <div class="example_section">
+                <p class="exm">Example 1:</p>
+                <p class="inp">Input: [1,2,3]</p>
+                <p class="inp">Output: [1,2,4]</p>
+                <p class="inp">Explanation: The array represents the integer 123.
+                    Incrementing by one gives 123 + 1 = 124.
+                    Thus, the result should be [1,2,4].</p>
+
+                <p class="exm">Example 2:</p>
+                <p class="inp">Input: [9]</p>
+                <p class="inp">Output: [1,0]</p>
+                <p class="inp">Explanation: The array represents the integer 9.
+                    Incrementing by one gives 9 + 1 = 10.
+                    Thus, the result should be [1,0].</p>
+            </div>
+
+        </div>
+
+        <div class="question-box">
+            <div class="question_section">
+                <h2>2.Reverse Words in a String.</h2>
+                <p>Given an input string s, reverse the order of the words..</p>
+
+            </div>
+            <div class="example_section">
+                <p class="exm">Example 1:</p>
+                <p class="inp">Input: "the sky is blue"</p>
+                <p class="inp">Output: "blue is sky the"</p>
+
+                <p class="exm">Example 2:</p>
+                <p class="inp">Input: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello world&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"</p>
+                <p class="inp">Output: "world hello"</p>
+                <p class="inp">Explanation: Your reversed string should not contain leading or trailing spaces.</p>
+            </div>
+
+        </div>
+
+
+        <div class="question-box">
+            <div class="question_section">
+                <h2>3.Roman to Integer.</h2>
+                <p>Given a roman numeral, convert it to an integer.
+                </p>
+                <p>Symbol Value</p>
+                <p>I    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       1</p>
+                <p>V    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        5</p>
+                <p>X    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        10</p>
+                <p>L    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        50</p>
+                <p>C     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       100</p>
+                <p>D     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       500</p>
+                <p>M     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       1000</p>
+            </div>
+            <div class="example_section">
+                
+                <p class="exm">Example 1:</p>
+                <p class="inp">Input: "III"</p>
+                <p class="inp">Output: 3</p>
+                <p class="inp">Explanation: III = 3</p>
+
+                <p class="exm">Example 2:</p>
+                <p class="inp">Input: "MCMXCIV"</p>
+                <p class="inp">Output: 1994</p>
+                <p class="inp">Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/js/round2.js"></script>
+
+</body>
+</html>

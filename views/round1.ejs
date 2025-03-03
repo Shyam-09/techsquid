@@ -1,0 +1,601 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+            position: relative;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(35, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+        .incorrect {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background: #FF007F;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #ff3399;
+        }
+        .logo {
+            width: 300px; 
+            margin-bottom: 20px;
+            text-align: center;
+            height: 70px;
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.8), 0 0 40px rgba(255, 0, 127, 0.5); 
+            border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+        }
+        .image_section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input:focus {
+    border-color: #ff69b4; /* Hot pink border */
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+}
+    </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="container">
+        <div class="image_section">
+            <img src="../assests/1000059097.jpg" alt="Round 1 Logo" class="logo">
+        </div>
+        <form id="quizForm">
+            <div class="question">
+                <label>1. What is 2 + 2?</label>
+                <input type="text" name="q1">
+                <div class="incorrect" id="q1-error"></div>
+            </div>
+
+            <div class="question">
+                <label>2. What is the capital of France?</label>
+                <input type="text" name="q2">
+                <div class="incorrect" id="q2-error"></div>
+            </div>
+
+            <div class="question">
+                <label>3. What is the square root of 16?</label>
+                <input type="text" name="q3">
+                <div class="incorrect" id="q3-error"></div>
+            </div>
+
+            <div class="question">
+                <label>4. What is 5 * 6?</label>
+                <input type="text" name="q4">
+                <div class="incorrect" id="q4-error"></div>
+            </div>
+
+            <div class="question">
+                <label>5. What is 10 / 2?</label>
+                <input type="text" name="q5">
+                <div class="incorrect" id="q5-error"></div>
+            </div>
+
+            <div class="question">
+                <label>6. Who wrote 'To Kill a Mockingbird'?</label>
+                <input type="text" name="q6">
+                <div class="incorrect" id="q6-error"></div>
+            </div>
+
+            <div class="question">
+                <label>7. What is the chemical symbol for water?</label>
+                <input type="text" name="q7">
+                <div class="incorrect" id="q7-error"></div>
+            </div>
+
+            <div class="question">
+                <label>8. How many continents are there?</label>
+                <input type="text" name="q8">
+                <div class="incorrect" id="q8-error"></div>
+            </div>
+
+            <div class="question">
+                <label>9. What is the boiling point of water in Celsius?</label>
+                <input type="text" name="q9">
+                <div class="incorrect" id="q9-error"></div>
+            </div>
+
+            <div class="question">
+                <label>10. What is the largest planet in our solar system?</label>
+                <input type="text" name="q10">
+                <div class="incorrect" id="q10-error"></div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="/js/round1.js"></script>
+    <script src="/js/round2.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hack The Lock – Crossword</title>
+  <style>
+    /* BODY / BACKGROUND */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000; /* Dark background */
+      color: #fff;
+    }
+
+    h1, h2 {
+      margin: 10px 0;
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255, 0, 127, 0.8);;
+    }
+    canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    /* MAIN CONTAINER holding both panels */
+    .container {
+      display: flex;
+      width: 1000px;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      background-color: rgba(35, 34, 34, 0.8);;
+      border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.8), 0 0 40px rgba(255, 0, 127, 0.5); 
+            border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+    }
+
+    /* LEFT PANEL: fixed grid (non-scrollable) */
+    .left-panel {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* RIGHT PANEL: scrollable questions */
+    .right-panel {
+      text-align: center;
+      flex: 1;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #111;
+      -ms-overflow-style: none;  /* IE and older Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+    .right-panel::-webkit-scrollbar {
+      width: 0;
+      background: transparent;   /* Chrome/Safari/Opera */
+      display: none;
+    }
+
+    /* CROSSWORD PUZZLE GRID */
+    .puzzle-grid {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-template-rows: repeat(11, 30px);
+      grid-template-columns: repeat(13, 30px);
+      background-color: #111;
+      gap: 1px;
+      margin: 0;
+      padding: 0;
+    }
+    .cell {
+      position: relative;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      font-weight: bold;
+    }
+    .black {
+      background: #000 !important;
+    }
+    .cell-number {
+      position: absolute;
+      top: 0;
+      left: 3px;
+      font-size: 10px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* QUESTIONS / INPUTS */
+    .clues-section {
+      margin-bottom: 20px;
+    }
+    .clues-section h3 {
+      color: rgba(255, 0, 127, 0.8);
+      margin-bottom: 5px;
+    }
+    .clue-item {
+      margin: 8px 0;
+    }
+    .clue-item label {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .clue-input {
+      width: 80%;
+      padding: 6px;
+      font-size: 1em;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      background: #222;
+      color: #fff;
+      transition: border-color 0.3s;
+    }
+    .clue-input:focus {
+      outline: none;
+      border-color: #ff00ff;
+    }
+
+    /* CHECK BUTTON */
+    .check-button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px 20px;
+      background-color: rgba(255, 0, 127, 0.8);
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .check-button:hover {
+      background-color: #e000e0;
+    }
+    .logo {
+            width: 300px; 
+            margin-bottom: 20px;
+            text-align: center;
+            height: 70px;
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.8), 0 0 40px rgba(255, 0, 127, 0.5); 
+            border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+        }
+        .image_section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem !important;
+        }
+  </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="image_section mt-3">
+        <img src="../assests/1000059097.jpg" alt="Round 1 Logo" class="logo">
+      </div>
+
+   <div class="container">
+  <!-- LEFT PANEL: FIXED CROSSWORD GRID -->
+  <div class="left-panel">
+    <div class="puzzle-grid">
+      <!-- 11 rows x 13 columns -->
+      <!-- For demonstration, only a few cells are marked as black/numbered -->
+      <!-- Row 1 -->
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell"><span class="cell-number">1</span></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell"><span class="cell-number">2</span></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <div class="cell black"></div>
+      <div class="cell "><span class="cell-number">3</span></div>
+      <div class="cell "></div>
+      <div class="cell "><span class="cell-number">4</span></div>
+      <div class="cell "></div>
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell "><span class="cell-number">5</span></div>
+      <div class="cell black"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <div class="cell"><span class="cell-number">6</span></div>
+      <div class="cell black"></div>
+      <div class="cell"><span class="cell-number">7</span></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <div class="cell "><span class="cell-number">8</span></div>
+      <div class="cell "></div>
+      <div class="cell "></div>
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell "></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell "><span class="cell-number">9</span></div>
+      <div class="cell "></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+    
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: QUESTIONS + INPUT FIELDS -->
+  <div class="right-panel">
+    <div class="clues-section">
+      <h3>Down</h3>
+      <div class="clue-item">
+        <label>1. Data type used for the storage of letters in C++?</label>
+        <input class="clue-input" type="text" data-answer="char" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>2. Process of arranging data into meaningful order.</label>
+        <input class="clue-input" type="text" data-answer="sorting" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>4. Like a line for tickets, first come first served.</label>
+        <input class="clue-input" type="text" data-answer="queue" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>5.Which approach is used for solving a problem by selecting the best option.</label>
+        <input class="clue-input" type="text" data-answer="greedy" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>6. ______ is a collection of unique elements .</label>
+        <input class="clue-input" type="text" data-answer="sets" placeholder="Answer here" />
+      </div>
+    </div>
+
+    <div class="clues-section">
+      <h3>Across</h3>
+      <div class="clue-item">
+        <label>2.Which Data structure follows LIFO property.</label>
+        <input class="clue-input" type="text" data-answer="stack" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>3.Which Datastructure Add/remove elements at both ends.</label>
+        <input class="clue-input" type="text" data-answer="deque" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>7. Function calls itself to solve a problem.</label>
+        <input class="clue-input" type="text" data-answer="recursion" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>8. A ____ data structure is a hierarchical
+            structure that is used to represent and
+            organize data in a way that is easy to
+            navigate.</label>
+        <input class="clue-input" type="text" data-answer="tree" placeholder="Answer here" />
+      </div>
+      <div class="clue-item">
+        <label>9.9. ___ is a collection of elements that
+            can be individually referenced by using an
+            index to a unique identifier.</label>
+        <input class="clue-input" type="text" data-answer="array" placeholder="Answer here" />
+      </div>
+    </div>
+    <input type="hidden" id="year" value="<%= year %>">
+
+    <button class="check-button" onclick="checkAnswers()">Check Answers</button>
+  </div>
+</div>
+<script src="/js/round2.js"></script>
+<script>
+  function checkAnswers() {
+    const clueInputs = document.querySelectorAll('.clue-input');
+    let allCorrect = true;
+
+    clueInputs.forEach(input => {
+      const userAnswer = input.value.trim().toLowerCase();
+      const correctAnswer = input.getAttribute('data-answer').toLowerCase();
+
+      if (userAnswer !== correctAnswer) {
+        input.style.borderColor = '#ff0000';
+        allCorrect = false;
+      } else {
+        input.style.borderColor = '#fff';
+      }
+    });
+
+    if (allCorrect) {
+      const year = "<%= year %>"; // Ensure this variable is available from EJS
+      window.location.href = `/key?year=${year}`;
+    }
+  }
+</script>
+</body>
+</html>
+
+
+
