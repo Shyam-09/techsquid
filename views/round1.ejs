@@ -572,27 +572,38 @@
 </div>
 <script src="/js/round2.js"></script>
 <script>
-  function checkAnswers() {
+function checkAnswers() {
     const clueInputs = document.querySelectorAll('.clue-input');
-    let allCorrect = true;
 
+    // Step 1: Reset all borders to default (blink effect)
     clueInputs.forEach(input => {
-      const userAnswer = input.value.trim().toLowerCase();
-      const correctAnswer = input.getAttribute('data-answer').toLowerCase();
-
-      if (userAnswer !== correctAnswer) {
-        input.style.borderColor = '#ff0000';
-        allCorrect = false;
-      } else {
-        input.style.borderColor = '#28a745';
-      }
+        input.style.borderColor = ''; // Reset to normal before rechecking
     });
 
-    if (allCorrect) {
-      const year = "<%= year %>"; // Ensure this variable is available from EJS
-      window.location.href = `/key?year=${year}`;
-    }
-  }
+    setTimeout(() => {
+        let allCorrect = true;
+
+        // Step 2: Apply border colors after blinking effect
+        clueInputs.forEach(input => {
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = input.getAttribute('data-answer').toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                input.style.borderColor = '#28a745'; // Green for correct answer
+            } else {
+                input.style.borderColor = '#ff0000'; // Red for incorrect answer
+                allCorrect = false;
+            }
+        });
+
+        if (allCorrect) {
+            const year = '◌̯ year ◌̯'; // Ensure this variable is available from EJS
+            window.location.href = `/key?year=${year}`;
+        }
+    }, 300); // 300ms delay for blinking effect
+}
+
+
 </script>
 </body>
 </html>
